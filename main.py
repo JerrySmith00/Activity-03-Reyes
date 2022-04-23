@@ -153,21 +153,24 @@ if choice == 2:
         Pokemon_Base.append(int(input("Enter "+ Pokemon_Stat[x] + ": ")))
     
     print("Enter IV on each Stat")    
-    for z in range(1,6):
-        Pokemon_IV.append(int(input("Enter "+Pokemon_Stat[z]+" IV: ")))
-        if (Pokemon_IV[z] < 0 or Pokemon_IV[z] > 31):
-            z = z - 1
+    i = 1
+    while i < 7:
+        Pokemon_IV.append(int(input("Enter "+Pokemon_Stat[i]+" IV: ")))
+        if (Pokemon_IV[i] < 0 or Pokemon_IV[i] > 31):
+            i = i - 1
             print("must be between 0 and 31")
+        i = i + 1
 
             
 
     print("Enter EV on each Stat")
-    for c in range(1,6):
-        Pokemon_EV.append(int(input("Enter "+Pokemon_Stat[c]+" EV: ")))
-        if (Pokemon_EV[c] < 0 or Pokemon_EV[c] > 255):
-            c = c-1
+    j = 1
+    while j < 7:
+        Pokemon_EV.append(int(input("Enter "+Pokemon_Stat[j]+" EV: ")))
+        if (Pokemon_EV[j] < 0 or Pokemon_EV[j] > 255):
+            j = j - 1
             print("must be between 0 and 255")
-            
+        j = j + 1    
 
     #Pokemon Neutral Nature
     if Pokemon_Nature in ['quirky','bashful','serious','docile','hardy']:
