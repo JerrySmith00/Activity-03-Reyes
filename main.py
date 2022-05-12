@@ -1,4 +1,5 @@
-import Stat_Ev_Calc  as sec
+import Ev_Calc  as ec
+import Stat_Calc as sc
 
 print("1. Stat Calc")
 print("2. EV Calc")
@@ -103,32 +104,32 @@ if choice == 1:
         Pokemon_Base_HP = int(input("Enter Base HP: "))
         Pokemon_Iv = int(input("Enter IV: "))
         Pokemon_Ev = int(input("Enter EV: "))
-        print("Total HP: ", sec.Stat_Ev_Calc.Stat_Calc_HP(Pokemon_Base_HP,Pokemon_Iv,Pokemon_Ev,Pokemon_Level),"\n")
+        print("Total HP: ", sc.Stat_Calc.Stat_Calc_HP(Pokemon_Base_HP,Pokemon_Iv,Pokemon_Ev,Pokemon_Level),"\n")
     if opt == 2:
         Pokemon_Base_Attack = int(input("Enter Base Attack Points: "))
         Pokemon_Iv = int(input("Enter IV: "))
         Pokemon_Ev = int(input("Enter EV: "))
-        print("Total Attack Points: ", sec.Stat_Ev_Calc.Other_Stat_Attack(Pokemon_Base_Attack,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_Attack),"\n")
+        print("Total Attack Points: ", sc.Stat_Calc.Other_Stat_Attack(Pokemon_Base_Attack,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_Attack),"\n")
     if opt == 3:
         Pokemon_Base_Defense = int(input("Enter Base Defense Points: "))
         Pokemon_Iv = int(input("Enter IV: "))
         Pokemon_Ev = int(input("Enter EV: "))
-        print("Total Defense Points: ", sec.Stat_Ev_Calc.Other_Stat_Defense(Pokemon_Base_Defense,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_Defense),"\n")    
+        print("Total Defense Points: ", sc.Stat_Calc.Other_Stat_Defense(Pokemon_Base_Defense,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_Defense),"\n")    
     if opt == 4:
         Pokemon_Base_SPAttack = int(input("Enter Base Special Attack Points: "))
         Pokemon_Iv = int(input("Enter IV: "))
         Pokemon_Ev = int(input("Enter EV: "))
-        print("Total Special Attack Points: ", sec.Stat_Ev_Calc.Other_Stat_SPAttack(Pokemon_Base_SPAttack,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_SPAttack),"\n")
+        print("Total Special Attack Points: ", sc.Stat_Calc.Other_Stat_SPAttack(Pokemon_Base_SPAttack,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_SPAttack),"\n")
     if opt == 5:
         Pokemon_Base_SPDefense = int(input("Enter Base Special Defense Points: "))
         Pokemon_Iv = int(input("Enter IV: "))
         Pokemon_Ev = int(input("Enter EV: "))
-        print("Total Special Defenes Points: ", sec.Stat_Ev_Calc.Other_Stat_SPDefense(Pokemon_Base_SPDefense,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_SPDefense),"\n")
+        print("Total Special Defenes Points: ", sc.Stat_Calc.Other_Stat_SPDefense(Pokemon_Base_SPDefense,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_SPDefense),"\n")
     if opt == 6:
         Pokemon_Base_Speed = int(input("Enter Base Speed Points: "))
         Pokemon_Iv = int(input("Enter IV: "))
         Pokemon_Ev = int(input("Enter EV: "))
-        print("Total Speed Points: ", sec.Stat_Ev_Calc.Other_Stat_Speed(Pokemon_Base_Speed,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_Speed),"\n")
+        print("Total Speed Points: ", sc.Stat_Calc.Other_Stat_Speed(Pokemon_Base_Speed,Pokemon_Iv,Pokemon_Ev,Pokemon_Level,Pokemon_Nature_Speed),"\n")
 
 flag = True
 Pokemon_Level =0
@@ -257,8 +258,8 @@ if choice == 2:
 
     Desired_Increase = int(input("Enter Desired Increase: "))
 
-    D = sec.Stat_Ev_Calc.Ev_Calc_D( Pokemon_Base[opt+1],Pokemon_IV[opt+1],Pokemon_EV[opt+1],Pokemon_Level)
+    D = ec.Ev_Calc.Ev_Calc_D( Pokemon_Base[opt+1],Pokemon_IV[opt+1],Pokemon_EV[opt+1],Pokemon_Level)
 
-    EVs_needed = sec.Stat_Ev_Calc.Ev_Calc_EV_Needed( Desired_Increase,Modifier,D,Pokemon_Level)
+    EVs_needed = ec.Ev_Calc.Ev_Calc_EV_Needed( Desired_Increase,Modifier,D,Pokemon_Level)
 
     print("The total amount of Evs needed for your pokemon ", EVs_needed)
